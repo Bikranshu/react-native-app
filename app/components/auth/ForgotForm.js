@@ -1,12 +1,10 @@
 import React, {Component} from 'react';
 import {
-    Text,
     View,
-    Button,
     StyleSheet
 } from 'react-native';
 import {reduxForm, Field} from 'redux-form';
-import {Container, Content} from 'native-base';
+import {Container, Content, Header, Title, Left, Right, Body, Button, Text, Icon} from 'native-base';
 
 import Logo from '../common/Logo';
 import renderInput from '../common/form/renderInput';
@@ -29,24 +27,33 @@ class ForgotForm extends Component {
 
         return (
             <Container>
+                <Header>
+                    <Left>
+                        <Button transparent>
+                            <Icon name='arrow-back'/>
+                        </Button>
+                    </Left>
+                    <Body>
+                    <Title>Forgot Password</Title>
+                    </Body>
+                    <Right />
+                </Header>
                 <Content>
                     <View style={styles.container}>
                         <Logo/>
 
                         <View style={styles.formContainer}>
 
-                            <Text style={styles.label}>Email</Text>
+                            <Text>Email</Text>
                             <Field
                                 name={'email'}
                                 component={renderInput}
                             />
 
                             <View style={styles.button}>
-                                <Button
-                                    onPress={handleSubmit(this.submit)}
-                                    title="send"
-                                    color="#9b59b6"
-                                />
+                                <Button full rounded onPress={handleSubmit(this.submit)} style={{backgroundColor: '#9b59b6'}}>
+                                    <Text>Send</Text>
+                                </Button>
                             </View>
                         </View>
                     </View>
@@ -75,9 +82,6 @@ const styles = StyleSheet.create({
     formContainer: {
         flex: 3,
         padding: 20
-    },
-    label: {
-        fontSize: 18
     },
     button: {
         paddingVertical: 20

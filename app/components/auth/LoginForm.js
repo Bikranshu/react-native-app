@@ -1,13 +1,11 @@
 import React, {Component} from 'react';
 import {
-    Text,
     View,
     Image,
-    Button,
     StyleSheet
 } from 'react-native';
 import {reduxForm, Field} from 'redux-form';
-import {Container, Content} from 'native-base';
+import {Container, Content,  Button, Text} from 'native-base';
 
 import Logo from '../common/Logo';
 import SignupSection from './SignupSection';
@@ -38,24 +36,22 @@ class LoginForm extends Component {
                         <Logo/>
 
                         <View style={styles.formContainer}>
-                            <Text style={styles.label}>Email</Text>
+                            <Text>Email</Text>
                             <Field
                                 name={'email'}
                                 component={renderInput}
                             />
 
-                            <Text style={styles.label}>Password</Text>
+                            <Text>Password</Text>
                             <Field
                                 name={'password'}
                                 component={renderPassword}
                             />
 
                             <View style={styles.button}>
-                                <Button
-                                    onPress={handleSubmit(this.submit)}
-                                    title="Login"
-                                    color="#9b59b6"
-                                />
+                                <Button full rounded onPress={handleSubmit(this.submit)} style={{backgroundColor: '#9b59b6'}}>
+                                    <Text>Login</Text>
+                                </Button>
                             </View>
                         </View>
 
@@ -90,9 +86,6 @@ const styles = StyleSheet.create({
     formContainer: {
         flex:2,
         padding: 20,
-    },
-    label: {
-        fontSize: 18
     },
     button: {
         paddingVertical: 20
