@@ -5,6 +5,7 @@ import {
 } from 'react-native';
 import {reduxForm, Field} from 'redux-form';
 import {Container, Content, Header, Title, Left, Right, Body, Button, Text, Icon} from 'native-base';
+import {Link} from 'react-router-native';
 
 import Logo from '../common/Logo';
 import renderInput from '../common/form/renderInput';
@@ -30,7 +31,10 @@ class ForgotForm extends Component {
                 <Header>
                     <Left>
                         <Button transparent>
-                            <Icon name='arrow-back'/>
+                            <Link to="/">
+                                <View>
+                                    <Icon name='arrow-back'/>
+                                </View></Link>
                         </Button>
                     </Left>
                     <Body>
@@ -51,7 +55,8 @@ class ForgotForm extends Component {
                             />
 
                             <View style={styles.button}>
-                                <Button full rounded onPress={handleSubmit(this.submit)} style={{backgroundColor: '#9b59b6'}}>
+                                <Button full rounded onPress={handleSubmit(this.submit)}
+                                        style={{backgroundColor: '#9b59b6'}}>
                                     <Text>Send</Text>
                                 </Button>
                             </View>

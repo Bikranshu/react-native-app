@@ -19,10 +19,6 @@ class SignUpForm extends Component {
 
     }
 
-    static navigationOptions = {
-        title: 'Welcome',
-    };
-
     submit(formProps) {
 
         console.log('submitting form', formProps)
@@ -36,7 +32,11 @@ class SignUpForm extends Component {
                 <Header>
                     <Left>
                         <Button transparent>
-                            <Icon name='arrow-back'/>
+                            <Link to="/">
+                                <View>
+                                    <Icon name='arrow-back'/>
+                                </View>
+                            </Link>
                         </Button>
                     </Left>
                     <Body>

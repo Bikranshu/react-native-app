@@ -1,5 +1,8 @@
-import React, { Component } from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import React, {Component} from 'react';
+import {StyleSheet, View, Text} from 'react-native';
+
+// Import custom components
+import Dashboard from '../../components/dashboard/Dashboard';
 
 class Dashboard extends Component {
 
@@ -10,9 +13,7 @@ class Dashboard extends Component {
     render() {
 
         return (
-            <View>
-                <Text> Dashboard </Text>
-            </View>
+            <Dashboard/>
         );
     }
 
