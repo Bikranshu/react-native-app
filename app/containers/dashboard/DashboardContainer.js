@@ -4,7 +4,7 @@ import {StyleSheet, View, Text} from 'react-native';
 // Import custom components
 import Dashboard from '../../components/dashboard/Dashboard';
 
-class Dashboard extends Component {
+class DashboardContainer extends Component {
 
     constructor(props) {
         super(props);
@@ -19,4 +19,4 @@ class Dashboard extends Component {
 
 }
 
-export default Dashboard
+export default DashboardContainer

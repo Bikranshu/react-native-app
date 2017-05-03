@@ -16,7 +16,9 @@ import NotFound from './components/error/NotFound';
 import Login from './containers/auth/Login';
 import SignUp from './containers/auth/SignUp';
 import Forgot from './containers/auth/Forgot';
-import Dashboard from './containers/dashboard/Dashboard';
+import Dashboard from './containers/dashboard/DashboardContainer';
+import Category from './containers/category/CategoryContainer';
+import NavigationDrawer from './components/common/NavigationDrawer';
 
 export default class Main extends Component {
 
@@ -30,7 +32,10 @@ export default class Main extends Component {
                             <Route path="/signup" component={SignUp}/>
                             <Route path="/forgot" component={Forgot}/>
 
-                            <Route path="/dashboard" component={Dashboard}/>
+                            <NavigationDrawer>
+                                <Route path="/dashboard" component={Dashboard}/>
+                                <Route path="/category" component={Category}/>
+                            </NavigationDrawer>
 
                             <Route component={NotFound}/>
                         </Switch>

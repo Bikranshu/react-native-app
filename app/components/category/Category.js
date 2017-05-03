@@ -4,7 +4,7 @@ import {Container, Content, ListItem, Text} from 'native-base';
 
 import HamburgerHeader from '../common/HamburgerHeader';
 
-class Dashboard extends Component {
+class Category extends Component {
 
     constructor(props) {
         super(props);
@@ -16,26 +16,23 @@ class Dashboard extends Component {
         return (
             <Container>
 
-                <HamburgerHeader title='Dashboard'/>
+                <HamburgerHeader title='Category'/>
 
                 <Content>
-                    <ListItem itemHeader first>
-                        <Text>COMEDY</Text>
+                    <ListItem>
+                        <Text>Comedy</Text>
                     </ListItem>
                     <ListItem >
-                        <Text>Hangover</Text>
+                        <Text>Serious</Text>
                     </ListItem>
                     <ListItem>
                         <Text>Horrible Bosses</Text>
                     </ListItem>
-                    <ListItem last>
+                    <ListItem>
                         <Text>Conjuring</Text>
                     </ListItem>
-                    <ListItem itemHeader>
-                        <Text>ACTION</Text>
-                    </ListItem>
-                    <ListItem>
-                        <Text>Terminator Genesis</Text>
+                    <ListItem >
+                        <Text>Action</Text>
                     </ListItem>
                 </Content>
 
@@ -46,4 +43,4 @@ class Dashboard extends Component {
 
 }
 
-export default Dashboard
+export default Category
