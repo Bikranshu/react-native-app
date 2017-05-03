@@ -39,7 +39,7 @@ class NavigationDrawer extends Component {
                 content={<SideBarMenu/> }
                 tapToClose={true}
                 onClose={this.closeDrawer}
-                openDrawerOffset={0.3}
+                openDrawerOffset={0.2}
                 panCloseMask={0.2}
                 styles={{
                     drawer: {
