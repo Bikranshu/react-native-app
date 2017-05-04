@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {View, Image, StyleSheet} from 'react-native';
-import {Container, Content, Header, List, ListItem, Left, Right, Button, Text, Icon, Thumbnail} from 'native-base';
+import {Container, Content, List, ListItem, Left, Right, Text, Icon, Separator} from 'native-base';
 import {Link} from 'react-router-native';
 
-const logoImage = require('../../images/logo.png');
+import Logo from '../common/Logo';
 
 const dataSource = [
     {
@@ -81,13 +81,10 @@ export class SideBarMenu extends Component {
 
         return (
             <Container>
-                <Content>
-                    <Thumbnail
-                        square
-                        source={logoImage}
-                    />
-                    <Text style={styles.label}>REACT NATIVE</Text>
-
+                <Content bounces={false}
+                         style={{ flex: 1, backgroundColor: '#fff', top: -1 }}>
+                    <Logo/>
+                    <Separator bordered/>
                     <List
                         dataArray={dataSource} renderRow={data =>
                         <ListItem button noBorder onPress={this.closeDrawer}>

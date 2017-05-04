@@ -5,7 +5,7 @@ import {
     StyleSheet
 } from 'react-native';
 import {reduxForm, Field} from 'redux-form';
-import {Container, Content,  Button, Text} from 'native-base';
+import {Container, Content, Button, Text} from 'native-base';
 
 import Logo from '../common/Logo';
 import SignupSection from './SignupSection';
@@ -32,32 +32,31 @@ class LoginForm extends Component {
         return (
             <Container>
                 <Content>
-                    <View style={styles.container}>
-                        <Logo/>
 
-                        <View style={styles.formContainer}>
-                            <Text>Email</Text>
-                            <Field
-                                name={'email'}
-                                component={renderInput}
-                            />
+                    <Logo/>
 
-                            <Text>Password</Text>
-                            <Field
-                                name={'password'}
-                                component={renderPassword}
-                            />
+                    <View style={styles.formContainer}>
+                        <Text>Email</Text>
+                        <Field
+                            name={'email'}
+                            component={renderInput}
+                        />
 
-                            <View style={styles.button}>
-                                <Button full rounded onPress={handleSubmit(this.submit)} style={{backgroundColor: '#9b59b6'}}>
-                                    <Text>Login</Text>
-                                </Button>
-                            </View>
+                        <Text>Password</Text>
+                        <Field
+                            name={'password'}
+                            component={renderPassword}
+                        />
+
+                        <View style={styles.button}>
+                            <Button full block onPress={handleSubmit(this.submit)} style={{backgroundColor: '#9b59b6'}}>
+                                <Text>Login</Text>
+                            </Button>
                         </View>
-
-                        <SignupSection/>
-
                     </View>
+
+                    <SignupSection/>
+
                 </Content>
             </Container>
         );
@@ -79,13 +78,8 @@ const validateLogin = values => {
 };
 
 const styles = StyleSheet.create({
-    container: {
-        flex:1,
-        flexDirection: 'column'
-    },
     formContainer: {
-        flex:2,
-        padding: 20,
+        padding: 20
     },
     button: {
         paddingVertical: 20

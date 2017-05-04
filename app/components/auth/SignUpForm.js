@@ -45,34 +45,32 @@ class SignUpForm extends Component {
                     <Right />
                 </Header>
                 <Content>
-                    <View style={styles.container}>
-                        <Logo/>
+                    <Logo/>
 
-                        <View style={styles.formContainer}>
-                            <Text>First Name</Text>
-                            <Field
-                                name={'first_name'}
-                                component={renderInput}
-                            />
+                    <View style={styles.formContainer}>
+                        <Text>First Name</Text>
+                        <Field
+                            name={'first_name'}
+                            component={renderInput}
+                        />
 
-                            <Text>Last Name</Text>
-                            <Field
-                                name={'last_name'}
-                                component={renderInput}
-                            />
+                        <Text>Last Name</Text>
+                        <Field
+                            name={'last_name'}
+                            component={renderInput}
+                        />
 
-                            <Text>Email</Text>
-                            <Field
-                                name={'email'}
-                                component={renderInput}
-                            />
+                        <Text>Email</Text>
+                        <Field
+                            name={'email'}
+                            component={renderInput}
+                        />
 
-                            <View style={styles.button}>
-                                <Button full rounded onPress={handleSubmit(this.submit)}
-                                        style={{backgroundColor: '#9b59b6'}}>
-                                    <Text>Register</Text>
-                                </Button>
-                            </View>
+                        <View style={styles.button}>
+                            <Button full block onPress={handleSubmit(this.submit)}
+                                    style={{backgroundColor: '#9b59b6'}}>
+                                <Text>Register</Text>
+                            </Button>
                         </View>
                     </View>
                 </Content>
@@ -101,12 +99,7 @@ const validateSignup = values => {
 };
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        flexDirection: 'column'
-    },
     formContainer: {
-        flex: 3,
         padding: 20,
     },
     button: {

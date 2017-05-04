@@ -8,6 +8,7 @@ import {NativeRouter, Route, Switch} from 'react-router-native';
 import {StyleProvider} from 'native-base';
 import getTheme from '../native-base-theme/components';
 import platform from '../native-base-theme/variables/platform';
+import material from '../native-base-theme/variables/material';
 
 import store from './store/store';
 
@@ -24,7 +25,7 @@ export default class Main extends Component {
 
     render() {
         return (
-            <StyleProvider style={getTheme(platform)}>
+            <StyleProvider style={getTheme(material)}>
                 <Provider store={store}>
                     <NativeRouter>
                         <Switch>
