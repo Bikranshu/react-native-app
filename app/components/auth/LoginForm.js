@@ -1,16 +1,17 @@
 import React, {Component} from 'react';
-import {
-    View,
-    Image,
-    StyleSheet
-} from 'react-native';
+import {View, Image, StyleSheet} from 'react-native';
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
+import {Redirect} from 'react-router';
 import {reduxForm, Field} from 'redux-form';
 import {Container, Content, Button, Text} from 'native-base';
 
+// Import custom components
 import Logo from '../common/Logo';
 import SignupSection from './SignupSection';
 import renderInput from '../common/form/renderInput';
 import renderPassword from '../common/form/renderPassword';
+import * as authService from '../../services/authService';
 
 class LoginForm extends Component {
 
@@ -23,11 +24,17 @@ class LoginForm extends Component {
 
     submit(formProps) {
 
-        console.log('submitting form', formProps)
+        this.props.actions.login(formProps);
     }
 
     render() {
         const {handleSubmit} = this.props;
+
+        if (this.props.isAuthenticated) {
+            return (
+                <Redirect to="/dashboard" replace={true}/>
+            )
+        }
 
         return (
             <Container>
@@ -86,7 +93,30 @@ const styles = StyleSheet.create({
     }
 });
 
-export default reduxForm({
+
+/**
+ * Map the state to props.
+ */
+function mapStateToProps(state) {
+    return {
+        token: state.auth.token,
+        isAuthenticated: state.auth.isAuthenticated,
+    }
+}
+
+/**
+ * Map the actions to props.
+ */
+function mapDispatchToProps(dispatch) {
+    return {
+        actions: bindActionCreators(Object.assign({}, authService), dispatch)
+    }
+}
+
+/**
+ * Connect the component to the Redux store.
+ */
+export default connect(mapStateToProps, mapDispatchToProps)(reduxForm({
     form: 'LoginForm', // ←A Unique identifier for this form
     validate: validateLogin  // ←Callback function for client-side validation
-})(LoginForm)
+})(LoginForm))

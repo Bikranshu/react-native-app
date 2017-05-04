@@ -14,7 +14,7 @@ import store from './store/store';
 
 // Import custom components
 import NotFound from './components/error/NotFound';
-import Login from './containers/auth/Login';
+import Login from './containers/auth/LoginContainer';
 import SignUp from './containers/auth/SignUp';
 import Forgot from './containers/auth/Forgot';
 import Dashboard from './containers/dashboard/DashboardContainer';

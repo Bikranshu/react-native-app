@@ -3,6 +3,7 @@ import {LOG_IN_SUCCESS, LOG_IN_FAILURE, LOG_OUT_SUCCESS} from '../constants/acti
 var initialState = {
     token: null,
     isAuthenticated: false,
+    loading: false
 };
 
 /**
@@ -15,18 +16,21 @@ export default function (state, action) {
         case LOG_IN_SUCCESS:
             return Object.assign({}, state, {
                 isAuthenticated: true,
-                token: action.payload,
+                loading: false,
+                token: null,
             });
 
         case LOG_IN_FAILURE:
             return Object.assign({}, state, {
                 isAuthenticated: false,
+                loading: false,
                 token: null,
             });
 
         case LOG_OUT_SUCCESS:
             return Object.assign({}, state, {
                 isAuthenticated: false,
+                loading: true,
                 token: null,
             });
 
