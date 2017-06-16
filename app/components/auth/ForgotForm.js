@@ -5,7 +5,6 @@ import {
 } from 'react-native';
 import {reduxForm, Field} from 'redux-form';
 import {Container, Content, Header, Title, Left, Right, Body, Button, Text, Icon} from 'native-base';
-import {Link} from 'react-router-native';
 
 import Logo from '../common/Logo';
 import renderInput from '../common/form/renderInput';
@@ -31,11 +30,11 @@ class ForgotForm extends Component {
                 <Header>
                     <Left>
                         <Button transparent>
-                            <Link to="/">
-                                <View>
-                                    <Icon name='arrow-back'/>
-                                </View>
-                            </Link>
+                            {/*<Link to="/">*/}
+                                {/*<View>*/}
+                                    {/*<Icon name='arrow-back'/>*/}
+                                {/*</View>*/}
+                            {/*</Link>*/}
                         </Button>
                     </Left>
                     <Body>

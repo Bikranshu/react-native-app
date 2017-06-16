@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {View, Text, StyleSheet,} from 'react-native';
-import {Link} from 'react-router-native';
 import {Left, Right} from 'native-base';
 
 export default class SignupSection extends Component {
@@ -8,14 +7,14 @@ export default class SignupSection extends Component {
         return (
             <View style={styles.container}>
                 <Left>
-                    <Link to="/signup">
-                        <Text style={styles.text}>Already have and account?</Text>
-                    </Link>
+                    <Text onPress={ () => this.props.navigation.navigate('SignUp') }
+                          style={styles.text}>Already have and account?
+                    </Text>
                 </Left>
                 <Right>
-                    <Link to="/forgot">
-                        <Text style={styles.text}>Forgot Password?</Text>
-                    </Link>
+                    <Text onPress={ () => this.props.navigation.navigate('Forgot') }
+                          style={styles.text}>Forgot Password?
+                    </Text>
                 </Right>
             </View>
 

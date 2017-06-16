@@ -1,7 +1,7 @@
 
 ## React Native App
 
-###  [React Native](https://facebook.github.io/react-native/docs/getting-started.html) + [NativeBase](http://nativebase.io/) + [React Router 4](https://github.com/ReactTraining/react-router) + [Redux](http://redux.js.org) + [Redux Form](https://github.com/erikras/redux-form) 
+###  [React Native](https://facebook.github.io/react-native/docs/getting-started.html) + [NativeBase](http://nativebase.io/) + [React Navigation](https://github.com/react-community/react-navigation) + [Redux](http://redux.js.org) + [Redux Form](https://github.com/erikras/redux-form) 
 
 
 ## Get Started

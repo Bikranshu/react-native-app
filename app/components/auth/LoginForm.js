@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {View, Image, StyleSheet} from 'react-native';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import {Redirect} from 'react-router';
 import {reduxForm, Field} from 'redux-form';
 import {Container, Content, Button, Text} from 'native-base';
 
@@ -31,9 +30,7 @@ class LoginForm extends Component {
         const {handleSubmit} = this.props;
 
         if (this.props.isAuthenticated) {
-            return (
-                <Redirect to="/dashboard" replace={true}/>
-            )
+            // TODO
         }
 
         return (

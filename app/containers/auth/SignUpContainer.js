@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 // Import custom components
 import SignUpForm from '../../components/auth/SignUpForm';
 
-class SignUp extends Component {
+class SignUpContainer extends Component {
 
     constructor(props) {
         super(props);
@@ -18,4 +18,4 @@ class SignUp extends Component {
 
 }
 
-export default SignUp
+export default SignUpContainer
