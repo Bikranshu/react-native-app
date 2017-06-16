@@ -6,7 +6,7 @@ import platform from '../native-base-theme/variables/platform';
 import material from '../native-base-theme/variables/material';
 
 import store from './store/store';
-import AppNavigationState from './navigators/AppNavigation';
+import StackNavigationState from './navigators/StackNavigationState';
 
 export default class Main extends Component {
 
@@ -15,7 +15,7 @@ export default class Main extends Component {
             <StyleProvider style={getTheme(material)}>
                 <Provider store={store}>
 
-                    <AppNavigationState />
+                    <StackNavigationState />
 
                 </Provider>
             </StyleProvider>

@@ -6,11 +6,13 @@ import SignUpNavigation from '../containers/auth/SignUpContainer';
 import ForgotNavigation from '../containers/auth/ForgotContainer';
 import DashboardNavigation from '../containers/dashboard/DashboardContainer';
 
-const AppNavigation = StackNavigator({
+const stackNavigatorConfiguration = { headerMode: 'none' };
+
+const StackNavigation = StackNavigator({
     Login: {screen: LoginNavigation},
     SignUp: {screen: SignUpNavigation},
     Forgot: {screen: ForgotNavigation},
     Dashboard: {screen: DashboardNavigation},
-});
+}, stackNavigatorConfiguration);
 
-export default AppNavigation
+export default StackNavigation

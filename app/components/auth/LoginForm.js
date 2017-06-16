@@ -30,7 +30,9 @@ class LoginForm extends Component {
         const {handleSubmit} = this.props;
 
         if (this.props.isAuthenticated) {
-            // TODO
+            // return (
+            //     <Redirect to="/dashboard" replace={true}/>
+            // )
         }
 
         return (

@@ -1,12 +1,12 @@
 import { NavigationActions } from 'react-navigation';
 
 // Import custom components
-import AppNavigation from '../navigators/AppNavigation';
-import {LOG_IN, LOG_OUT} from '../constants/actionType';
+import StackNavigation from '../navigators/StackNavigation';
+import {LOG_IN, LOG_OUT, SIGN_UP} from '../constants/actionType';
 
-const LoginAction = AppNavigation.router.getActionForPathAndParams('Login');
+const LoginAction = StackNavigation.router.getActionForPathAndParams('Login');
 
-const initialNavState = AppNavigation.router.getStateForAction(
+const initialNavState = StackNavigation.router.getStateForAction(
     LoginAction
 );
 
@@ -18,19 +18,24 @@ export default function (state, action) {
     let nextState;
     switch (action.type) {
         case LOG_IN:
-            nextState = AppNavigation.router.getStateForAction(
+            nextState = StackNavigation.router.getStateForAction(
                 NavigationActions.back(),
                 state
             );
 
         case LOG_OUT:
-            nextState = AppNavigation.router.getStateForAction(
+            nextState = StackNavigation.router.getStateForAction(
                 NavigationActions.navigate({routeName: 'Login'}),
+                state
+            );
+        case SIGN_UP:
+            nextState = StackNavigation.router.getStateForAction(
+                NavigationActions.navigate({routeName: 'SignUp'}),
                 state
             );
 
         default:
-            nextState = AppNavigation.router.getStateForAction(action, state);
+            nextState = StackNavigation.router.getStateForAction(action, state);
             break;
     }
     return nextState || state;

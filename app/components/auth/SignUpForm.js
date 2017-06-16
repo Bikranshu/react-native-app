@@ -30,12 +30,9 @@ class SignUpForm extends Component {
             <Container>
                 <Header>
                     <Left>
-                        <Button transparent>
-                            {/*<Link to="/">*/}
-                                {/*<View>*/}
-                                    {/*<Icon name='arrow-back'/>*/}
-                                {/*</View>*/}
-                            {/*</Link>*/}
+                        <Button transparent
+                            onPress={() => this.props.navigation.navigate("Login")}>
+                            <Icon name="menu" />
                         </Button>
                     </Left>
                     <Body>
