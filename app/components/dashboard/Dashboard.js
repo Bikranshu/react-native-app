@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {View, StyleSheet} from 'react-native';
 import {Container, Content, ListItem, Text} from 'native-base';
 
+// Import custom components
 import HamburgerHeader from '../common/HamburgerHeader';
 
 class Dashboard extends Component {

@@ -1,3 +1,4 @@
+// Import custom components
 import {LOG_IN_SUCCESS, LOG_IN_FAILURE, LOG_OUT_SUCCESS} from '../constants/actionType';
 
 var initialState = {

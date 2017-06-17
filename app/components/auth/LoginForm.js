@@ -4,6 +4,7 @@ import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import {reduxForm, Field} from 'redux-form';
 import {Container, Content, Button, Text} from 'native-base';
+import {withNavigation} from 'react-navigation';
 
 // Import custom components
 import Logo from '../common/Logo';
@@ -30,9 +31,7 @@ class LoginForm extends Component {
         const {handleSubmit} = this.props;
 
         if (this.props.isAuthenticated) {
-            // return (
-            //     <Redirect to="/dashboard" replace={true}/>
-            // )
+            this.props.navigation.navigate('Dashboard');
         }
 
         return (
@@ -118,4 +117,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(mapStateToProps, mapDispatchToProps)(reduxForm({
     form: 'LoginForm', // ←A Unique identifier for this form
     validate: validateLogin  // ←Callback function for client-side validation
-})(LoginForm))
+})(withNavigation(LoginForm)))

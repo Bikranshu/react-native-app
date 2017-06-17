@@ -1,29 +1,24 @@
-import React, {Component}  from 'react';
-import PropTypes from 'prop-types';
-import {connect} from 'react-redux';
-import {addNavigationHelpers} from 'react-navigation';
+import {DrawerNavigator} from 'react-navigation';
 
 // Import custom components
-import Drawer from './DrawerRoute';
+import DashboardNavigation from '../../containers/dashboard/DashboardContainer';
+import CategoryNavigation from '../../containers/category/CategoryContainer';
+import DrawerContent from './DrawerContent';
 
-const DrawerNavigation = ({dispatch, nav}) => (
-    <Drawer
-        navigation={
-            addNavigationHelpers({
-                dispatch,
-                state: nav,
-            })
-        }
-    />
+const drawerNavigationConfiguration = {headerMode: 'screen'};
+
+const DrawerNavigation = DrawerNavigator(
+    {
+        Dashboard: {screen: DashboardNavigation},
+        Users: {screen: CategoryNavigation},
+        Categories: {screen: DashboardNavigation},
+        Products: {screen: CategoryNavigation},
+        Settings: {screen: DashboardNavigation},
+        Maps: {screen: CategoryNavigation},
+        Notifications: {screen: DashboardNavigation},
+        LogOut: {screen: DashboardNavigation},
+    },
+    drawerNavigationConfiguration
 );
 
-DrawerNavigation.propTypes = {
-    dispatch: PropTypes.func.isRequired,
-    nav: PropTypes.object.isRequired,
-};
-
-const mapStateToProps = state => ({
-    nav: state.drawer,
-});
-
-export default connect(mapStateToProps)(DrawerNavigation);
+export default Drawer = DrawerNavigation;

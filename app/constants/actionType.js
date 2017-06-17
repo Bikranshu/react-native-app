@@ -5,11 +5,3 @@ export const LOG_OUT_FAILURE = 'LOG_OUT_FAILURE';
 
 export const API_REQUEST = 'API_REQUEST';
 export const API_RESPONSE = 'API_RESPONSE';
-
-export const OPEN_DRAWER = 'OPEN_DRAWER';
-export const CLOSE_DRAWER = 'CLOSE_DRAWER';
-
-
-export const LOG_IN = 'LOG_IN';
-export const LOG_OUT = 'LOG_OUT';
-export const SIGN_UP = 'SIGN_UP';

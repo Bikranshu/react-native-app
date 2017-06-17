@@ -5,7 +5,9 @@ import {
 } from 'react-native';
 import {reduxForm, Field} from 'redux-form';
 import {Container, Content, Header, Title, Left, Right, Body, Button, Text, Icon} from 'native-base';
+import {withNavigation} from 'react-navigation';
 
+// Import custom components
 import Logo from '../common/Logo';
 import renderInput from '../common/form/renderInput';
 
@@ -30,8 +32,8 @@ class ForgotForm extends Component {
                 <Header>
                     <Left>
                         <Button transparent
-                            onPress={() => this.props.navigation.navigate("Login")}>
-                            <Icon name="menu" />
+                            onPress={() => this.props.navigation.goBack()}>
+                            <Icon name='arrow-back'/>
                         </Button>
                     </Left>
                     <Body>
@@ -85,4 +87,4 @@ const styles = StyleSheet.create({
 export default reduxForm({
     form: 'ForgotForm', // ←A Unique identifier for this form
     validate: validateForgot  // ←Callback function for client-side validation
-})(ForgotForm)
+})(withNavigation(ForgotForm))

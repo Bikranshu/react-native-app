@@ -1,9 +1,12 @@
 import React, {Component} from 'react';
 import {View, Text, StyleSheet,} from 'react-native';
 import {Left, Right} from 'native-base';
+import {withNavigation} from 'react-navigation';
 
-export default class SignupSection extends Component {
+class SignupSection extends Component {
+
     render() {
+        console.log(this.props.navigation);
         return (
             <View style={styles.container}>
                 <Left>
@@ -35,3 +38,5 @@ const styles = StyleSheet.create({
         backgroundColor: 'transparent'
     },
 });
+
+export default withNavigation(SignupSection);

@@ -5,8 +5,9 @@ import getTheme from '../native-base-theme/components';
 import platform from '../native-base-theme/variables/platform';
 import material from '../native-base-theme/variables/material';
 
+// Import custom components
 import store from './store/store';
-import StackNavigationState from './navigators/StackNavigationState';
+import StackNavigationState from './routers/stack/StackNavigationState';
 
 export default class Main extends Component {
 
