@@ -6,10 +6,15 @@ import {Icon} from 'native-base';
 import DashboardNavigation from '../../containers/dashboard/DashboardContainer';
 import CategoryNavigation from '../../containers/category/CategoryContainer';
 import DrawerContent from './DrawerContent';
+import LogoutNavigator from './LogoutNavigator';
+
 
 const drawerNavigationConfiguration = {
     headerMode: 'screen',
-    contentComponent: props => <DrawerContent {...props} />
+    contentComponent: props => <DrawerContent {...props} />,
+    contentOptions: {
+        activeTintColor: 'steelblue'
+    }
 };
 
 const DrawerNavigation = DrawerNavigator(
@@ -38,16 +43,16 @@ const DrawerNavigation = DrawerNavigator(
                 drawerIcon: ({tintColor}) => <Icon name="ios-car" size={26} color={tintColor}/>
             }
         },
-        Settings: {
-            screen: DashboardNavigation,
-            navigationOptions: {
-                drawerIcon: ({tintColor}) => <Icon name="md-settings" size={26} color={tintColor}/>
-            }
-        },
         Maps: {
             screen: CategoryNavigation,
             navigationOptions: {
                 drawerIcon: ({tintColor}) => <Icon name="ios-pin" size={26} color={tintColor}/>
+            }
+        },
+        Events: {
+            screen: DashboardNavigation,
+            navigationOptions: {
+                drawerIcon: ({tintColor}) => <Icon name="md-settings" size={26} color={tintColor}/>
             }
         },
         Notifications: {
@@ -56,12 +61,35 @@ const DrawerNavigation = DrawerNavigator(
                 drawerIcon: ({tintColor}) => <Icon name="notifications" size={26} color={tintColor}/>
             }
         },
-        LogOut: {
+        PrivacyPolicy: {
             screen: DashboardNavigation,
             navigationOptions: {
+                drawerLabel: 'Privacy Policy',
+                drawerIcon: ({tintColor}) => <Icon name="md-settings" size={26} color={tintColor}/>
+            }
+        },
+        Settings: {
+            screen: DashboardNavigation,
+            navigationOptions: {
+                drawerIcon: ({tintColor}) => <Icon name="md-settings" size={26} color={tintColor}/>
+            }
+        },
+        // LogOut: {
+        //     screen: () => { return null; NavigationActions.navigate({routeName: 'Login'}) },
+        //     navigationOptions: {
+        //         drawerLabel: 'Log Out',
+        //         drawerIcon: ({tintColor}) => <Icon name="ios-power" size={26} color={tintColor}/>
+        //     }
+        // },
+
+        LogOut: {
+            screen: LogoutNavigator,
+            navigationOptions: {
+                drawerLabel: 'Log Out',
                 drawerIcon: ({tintColor}) => <Icon name="ios-power" size={26} color={tintColor}/>
             }
         },
+
         HelpFeedback: {
             screen: DashboardNavigation,
             navigationOptions: {

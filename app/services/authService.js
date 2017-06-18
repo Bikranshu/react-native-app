@@ -13,3 +13,10 @@ export function login({email, password}) {
             .catch(error => dispatch(AuthAction.loginFailure(error)));
     };
 }
+
+
+export function logout() {
+    return function (dispatch) {
+        dispatch(AuthAction.logoutSuccess());
+    };
+}
