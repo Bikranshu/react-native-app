@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import {View, StyleSheet} from 'react-native';
-import {Container, Content, ListItem, Text} from 'native-base';
+import {Container, Content, List, ListItem, Left, Right, Body, Thumbnail, Text} from 'native-base';
 
 // Import custom components
-import HamburgerHeader from '../common/HamburgerHeader';
+import HamburgerSearchHeader from '../common/HamburgerSearchHeader';
 
 class Dashboard extends Component {
 
@@ -13,31 +13,29 @@ class Dashboard extends Component {
     }
 
     render() {
-
+        let items = ['Krishna Timilsina', 'Ram Sharma', 'Jony Lever', 'Parker Teracy', 'Emre Can'];
         return (
             <Container>
 
-                <HamburgerHeader title='Dashboard'/>
+                <HamburgerSearchHeader title='Dashboard'/>
 
                 <Content>
-                    <ListItem itemHeader first>
-                        <Text>COMEDY</Text>
-                    </ListItem>
-                    <ListItem >
-                        <Text>Hangover</Text>
-                    </ListItem>
-                    <ListItem>
-                        <Text>Horrible Bosses</Text>
-                    </ListItem>
-                    <ListItem last>
-                        <Text>Conjuring</Text>
-                    </ListItem>
-                    <ListItem itemHeader>
-                        <Text>ACTION</Text>
-                    </ListItem>
-                    <ListItem>
-                        <Text>Terminator Genesis</Text>
-                    </ListItem>
+                    <List dataArray={items}
+                          renderRow={(item) =>
+                              <ListItem avatar>
+                                  <Left>
+                                      <Thumbnail source={require('../../images/logo.png')}/>
+                                  </Left>
+                                  <Body>
+                                  <Text>{item}</Text>
+                                  <Text note>Doing what you like will always keep you happy . .</Text>
+                                  </Body>
+                                  <Right>
+                                      <Text note>2:43 pm</Text>
+                                  </Right>
+                              </ListItem>
+                          }>
+                    </List>
                 </Content>
 
             </Container>
