@@ -1,15 +1,19 @@
 import React, {Component} from 'react';
-import {
-    View,
-    StyleSheet
-} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 import {reduxForm, Field} from 'redux-form';
-import {Container, Content, Header, Title, Left, Right, Body, Button, Text, Icon} from 'native-base';
+import {Container, Content, Button, Text} from 'native-base';
 import {withNavigation} from 'react-navigation';
+import {ThemeProvider, Toolbar} from 'react-native-material-ui';
 
 // Import custom components
 import Logo from '../common/Logo';
 import renderInput from '../common/form/renderInput';
+
+const uiTheme = {
+    palette: {
+        primaryColor: '#3F51B5',
+    }
+};
 
 class ForgotForm extends Component {
 
@@ -29,18 +33,15 @@ class ForgotForm extends Component {
 
         return (
             <Container>
-                <Header>
-                    <Left>
-                        <Button transparent
-                            onPress={() => this.props.navigation.goBack()}>
-                            <Icon name='arrow-back'/>
-                        </Button>
-                    </Left>
-                    <Body>
-                    <Title>Forgot Password</Title>
-                    </Body>
-                    <Right />
-                </Header>
+
+                <ThemeProvider uiTheme={uiTheme}>
+                    <Toolbar
+                        leftElement="arrow-back"
+                        onLeftElementPress={() => this.props.navigation.goBack()}
+                        centerElement='Forgot Password'
+                    />
+                </ThemeProvider>
+
                 <Content>
                     <Logo/>
 

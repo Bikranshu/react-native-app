@@ -13,7 +13,7 @@
 
 ### 2. Firebase
 
-- Find firebase.example.js file in src directory, rename it to firebase.js and edit it with your firebase app configuration.
+- Find firebase.example.js file in app/constants directory, rename it to firebase.js and edit it with your firebase app configuration.
 
 ### 3. Installation
 
