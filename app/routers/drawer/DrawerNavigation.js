@@ -25,14 +25,14 @@ const DrawerNavigation = DrawerNavigator(
                 drawerIcon: ({tintColor}) => <Icon name="ios-home" size={26} color={tintColor}/>
             }
         },
-        Users: {
-            screen: CategoryNavigation,
+        Employees: {
+            screen: DashboardNavigation,
             navigationOptions: {
                 drawerIcon: ({tintColor}) => <Icon name="ios-person" size={26} color={tintColor}/>
             }
         },
         Categories: {
-            screen: DashboardNavigation,
+            screen: CategoryNavigation,
             navigationOptions: {
                 drawerIcon: ({tintColor}) => <Icon name="ios-paw" size={26} color={tintColor}/>
             }

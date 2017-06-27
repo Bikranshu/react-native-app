@@ -9,7 +9,6 @@ import DrawerNavigation from '../drawer/DrawerNavigation';
 const stackNavigationConfiguration = { headerMode: 'none' };
 
 const StackNavigation = StackNavigator({
-    //Splash:{screen:SplashScreen},
     Login: {screen: LoginNavigation},
     SignUp: {screen: SignUpNavigation},
     Forgot: {screen: ForgotNavigation},

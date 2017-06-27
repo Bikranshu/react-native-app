@@ -1,6 +1,9 @@
 package com.reactnativeapp;
 
+import android.os.Bundle;
+
 import com.facebook.react.ReactActivity;
+import com.cboy.rn.splashscreen.SplashScreen;
 
 public class MainActivity extends ReactActivity {
 
@@ -12,4 +15,10 @@ public class MainActivity extends ReactActivity {
     protected String getMainComponentName() {
         return "ReactNativeApp";
     }
+
+    @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            SplashScreen.show(this,true);
+            super.onCreate(savedInstanceState);
+        }
 }
