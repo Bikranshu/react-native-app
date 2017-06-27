@@ -1,2 +1,1 @@
-//export const API_URL = 'http://localhost:3000';
-export const API_URL = 'https://facebook.github.io/react-native';
+export const API_URL = 'http://localhost:3000';

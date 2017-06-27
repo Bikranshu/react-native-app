@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
-import {
-    View,
-    StyleSheet
-} from 'react-native';
+import {View, StyleSheet} from 'react-native';
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
 import {reduxForm, Field} from 'redux-form';
 import {Container, Content, Header, Title, Left, Right, Body, Button, Text, Icon} from 'native-base';
 import {withNavigation} from 'react-navigation';
@@ -10,6 +9,8 @@ import {withNavigation} from 'react-navigation';
 // Import custom components
 import Logo from '../common/Logo';
 import renderInput from '../common/form/renderInput';
+import renderPassword from '../common/form/renderPassword';
+import * as authService from '../../services/authService';
 
 class SignUpForm extends Component {
 
@@ -22,7 +23,7 @@ class SignUpForm extends Component {
 
     submit(formProps) {
 
-        console.log('submitting form', formProps)
+        this.props.actions.signup(formProps);
     }
 
     render() {
@@ -33,7 +34,7 @@ class SignUpForm extends Component {
                 <Header>
                     <Left>
                         <Button transparent
-                            onPress={() => this.props.navigation.navigate("Login")}>
+                                onPress={() => this.props.navigation.navigate("Login")}>
                             <Icon name='arrow-back'/>
                         </Button>
                     </Left>
@@ -48,13 +49,13 @@ class SignUpForm extends Component {
                     <View style={styles.formContainer}>
                         <Text>First Name</Text>
                         <Field
-                            name={'first_name'}
+                            name={'firstname'}
                             component={renderInput}
                         />
 
                         <Text>Last Name</Text>
                         <Field
-                            name={'last_name'}
+                            name={'lastname'}
                             component={renderInput}
                         />
 
@@ -62,6 +63,12 @@ class SignUpForm extends Component {
                         <Field
                             name={'email'}
                             component={renderInput}
+                        />
+
+                        <Text>Password</Text>
+                        <Field
+                            name={'password'}
+                            component={renderPassword}
                         />
 
                         <View style={styles.button}>
@@ -93,6 +100,12 @@ const validateSignup = values => {
         errors.email = 'Invalid email address.'
     }
 
+    if (!values.password) {
+        errors.password = '(The password field is required.)'
+    }else if(values.password.length < 6){
+        errors.password= '(The password length min 6 characters.)';
+    }
+
     return errors
 };
 
@@ -105,7 +118,22 @@ const styles = StyleSheet.create({
     }
 });
 
-export default reduxForm({
+
+/**
+ * Map the state to props.
+ */
+const mapStateToProps = state => ({
+    nav: state.nav
+});
+
+/**
+ * Map the actions to props.
+ */
+const mapDispatchToProps = dispatch => ({
+    actions: bindActionCreators(Object.assign({}, authService), dispatch)
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(reduxForm({
     form: 'SignUpForm', // ←A Unique identifier for this form
     validate: validateSignup  // ←Callback function for client-side validation
-})(withNavigation(SignUpForm))
+})(withNavigation(SignUpForm)))
