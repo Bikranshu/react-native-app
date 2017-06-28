@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {View, StyleSheet} from 'react-native';
 import {Container, Content, ListItem, Footer, FooterTab, Button, Icon, Text} from 'native-base';
+import {withNavigation} from 'react-navigation';
 
 // Import custom components
 import HamburgerHeader from '../common/HamburgerHeader';
@@ -13,11 +14,16 @@ class Category extends Component {
     }
 
     render() {
+        const { navigate } = this.props.navigation;
 
         return (
             <Container>
 
-                <HamburgerHeader title='Category'/>
+                <HamburgerHeader
+                    title='Category'
+                    icon="arrow-back"
+                    onPress={() => navigate('DrawerOpen')}
+                />
 
                 <Content>
                     <ListItem>
@@ -61,4 +67,4 @@ class Category extends Component {
 
 }
 
-export default Category
+export default withNavigation(Category)

@@ -30,10 +30,6 @@ class LoginForm extends Component {
     render() {
         const {handleSubmit} = this.props;
 
-        if (this.props.isAuthenticated) {
-            this.props.navigation.navigate('Dashboard');
-        }
-
         return (
             <Container>
                 <Content>

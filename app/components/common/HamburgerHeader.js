@@ -10,17 +10,22 @@ class HamburgerHeader extends Component {
 
     }
 
+    static defaultProps = {
+        icon: 'menu',
+        title: 'Dashboard'
+    };
+
     render() {
         return (
             <Header>
                 <Left>
-                    <Button transparent onPress={() => this.props.navigation.navigate('DrawerOpen')}>
-                        <Icon active name="menu"/>
+                    <Button transparent onPress={this.props.onPress}>
+                        <Icon active name={this.props.icon}/>
                     </Button>
                 </Left>
 
                 <Body>
-                <Title>{(this.props.title) ? this.props.title : 'Dashboard'}</Title>
+                <Title>{this.props.title}</Title>
                 </Body>
             </Header>
         );
@@ -28,7 +33,9 @@ class HamburgerHeader extends Component {
 }
 
 HamburgerHeader.propTypes = {
-    title: PropTypes.string
+    title: PropTypes.string.isRequired,
+    onPress: PropTypes.func.isRequired,
+    icon: PropTypes.string.isRequired,
 };
 
 export default withNavigation(HamburgerHeader)

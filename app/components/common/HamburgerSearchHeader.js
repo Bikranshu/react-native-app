@@ -16,13 +16,18 @@ class HamburgerSearchHeader extends Component {
 
     }
 
+    static defaultProps = {
+        icon: 'menu',
+        title: 'Dashboard'
+    };
+
     render() {
         return (
             <ThemeProvider uiTheme={uiTheme}>
                 <Toolbar
-                    leftElement="menu"
-                    onLeftElementPress={() => this.props.navigation.navigate('DrawerOpen')}
-                    centerElement={(this.props.title) ? this.props.title : 'Dashboard'}
+                    leftElement={this.props.icon}
+                    onLeftElementPress={this.props.onPress}
+                    centerElement={this.props.title}
                     searchable={{
                         autoFocus: true,
                         placeholder: 'Search',
@@ -34,7 +39,9 @@ class HamburgerSearchHeader extends Component {
 }
 
 HamburgerSearchHeader.propTypes = {
-    title: PropTypes.string
+    title: PropTypes.string.isRequired,
+    onPress: PropTypes.func.isRequired,
+    icon: PropTypes.string.isRequired,
 };
 
 export default withNavigation(HamburgerSearchHeader)

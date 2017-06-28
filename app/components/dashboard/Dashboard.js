@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {View, StyleSheet} from 'react-native';
 import {Container, Content, List, ListItem, Left, Right, Body, Thumbnail, Text} from 'native-base';
+import {withNavigation} from 'react-navigation';
 
 // Import custom components
 import HamburgerSearchHeader from '../common/HamburgerSearchHeader';
@@ -14,10 +15,16 @@ class Dashboard extends Component {
 
     render() {
         let items = ['Krishna Timilsina', 'Ram Sharma', 'Jony Lever', 'Parker Teracy', 'Emre Can'];
+        const { navigate } = this.props.navigation;
+
         return (
             <Container>
 
-                <HamburgerSearchHeader title='Dashboard'/>
+                <HamburgerSearchHeader
+                    title='Dashboard'
+                    icon="menu"
+                    onPress={() => navigate('DrawerOpen')}
+                />
 
                 <Content>
                     <List dataArray={items}
@@ -45,4 +52,4 @@ class Dashboard extends Component {
 
 }
 
-export default Dashboard
+export default withNavigation(Dashboard)
