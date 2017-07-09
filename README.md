@@ -27,7 +27,9 @@ $ git clone https://github.com/Bikranshu/react-native-app.git
 $ cd react-native-app/
 
 $ npm install
-
+```
+Link native dependencies:
+```sh
 $ react-native link
 ```
 Start react native development server:
