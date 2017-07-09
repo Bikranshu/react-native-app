@@ -9,7 +9,9 @@
 ### 1. Requirements
 
 * [NodeJs](https://nodejs.org/en/)
+* [NPM](https://www.npmjs.com/)
 * [React Native CLI](https://facebook.github.io/react-native/docs/getting-started.html)
+* [Android SDK](https://developer.android.com/studio/index.html)
 
 ### 2. Firebase
 
@@ -28,7 +30,11 @@ $ npm install
 
 $ react-native link
 ```
+Start react native development server:
 ```sh
 $ react-native start
+```
+Install android app in emulator / device:
+```sh
 $ react-native run-android
 ```
