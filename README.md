@@ -36,7 +36,8 @@ $ react-native link
 - Find firebase.example.js file in app/constants directory, rename it to firebase.js and edit it with your firebase app configuration.
 
 ### 4. Usage
-* #####For Development
+* For Development
+
     Start react native development server:
     ```sh
     $ react-native start
@@ -45,5 +46,6 @@ $ react-native link
     ```sh
     $ react-native run-android
     ```
-* #####For Production
+* For Production
+
     Follow [these](https://facebook.github.io/react-native/docs/signed-apk-android.html) steps for generating signed apk for android app.
