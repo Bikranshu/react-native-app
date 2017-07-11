@@ -6,9 +6,9 @@ import {withNavigation} from 'react-navigation';
 
 // Import custom components
 import HamburgerSearchHeader from '../common/HamburgerSearchHeader';
-import CategoryList from './CategoryList';
+import EmployeeList from './EmployeeList';
 
-class Category extends Component {
+class Employee extends Component {
 
     constructor(props) {
         super(props);
@@ -44,7 +44,7 @@ class Category extends Component {
             <Container>
 
                 <HamburgerSearchHeader
-                    title='Category'
+                    title='Employee'
                     icon="menu"
                     onPress={() => navigate('DrawerOpen')}
                     onSetText={this.handleTextChange}
@@ -53,7 +53,7 @@ class Category extends Component {
 
                 <Content>
 
-                    <CategoryList items={items}/>
+                    <EmployeeList items={items}/>
 
                 </Content>
 
@@ -64,8 +64,8 @@ class Category extends Component {
 
 }
 
-Category.propTypes = {
+Employee.propTypes = {
     onPress: PropTypes.func,
 };
 
-export default (withNavigation(Category))
+export default (withNavigation(Employee))

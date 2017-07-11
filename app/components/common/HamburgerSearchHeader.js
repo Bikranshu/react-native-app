@@ -9,6 +9,22 @@ const uiTheme = {
     }
 };
 
+// const HamburgerSearchHeader = (props) => (
+//     <ThemeProvider uiTheme={uiTheme}>
+//         <Toolbar
+//             leftElement={props.icon}
+//             onLeftElementPress={props.onPress}
+//             centerElement={props.title}
+//             searchable={{
+//                 autoFocus: true,
+//                 placeholder: 'Search',
+//                 onChangeText: value =>  props.onSetText(value),
+//                 onSearchClosed: () => props.onClearText(),
+//             }}
+//         />
+//     </ThemeProvider>
+// );
+
 class HamburgerSearchHeader extends Component {
 
     constructor(props) {
@@ -21,7 +37,16 @@ class HamburgerSearchHeader extends Component {
         title: 'Dashboard'
     };
 
+    handleSetText = (value) => {
+        this.props.onSetText(value);
+    }
+
+    handleClearText = () => {
+        this.props.onClearText();
+    }
+
     render() {
+
         return (
             <ThemeProvider uiTheme={uiTheme}>
                 <Toolbar
@@ -31,6 +56,8 @@ class HamburgerSearchHeader extends Component {
                     searchable={{
                         autoFocus: true,
                         placeholder: 'Search',
+                        onChangeText: value => this.handleSetText(value),
+                        onSearchClosed: () => this.handleClearText(),
                     }}
                 />
             </ThemeProvider>
@@ -44,4 +71,4 @@ HamburgerSearchHeader.propTypes = {
     icon: PropTypes.string.isRequired,
 };
 
-export default withNavigation(HamburgerSearchHeader)
+export default HamburgerSearchHeader

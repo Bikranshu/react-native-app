@@ -7,3 +7,5 @@ export const API_RESPONSE = 'API_RESPONSE';
 
 export const SIGN_UP_SUCCESS = 'SIGN_UP_SUCCESS';
 export const SIGN_UP_FAILURE = 'SIGN_UP_FAILURE';
+
+export const SEARCH = 'SEARCH';

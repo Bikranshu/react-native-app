@@ -3,6 +3,7 @@ import {DrawerNavigator, NavigationActions} from 'react-navigation';
 
 // Import custom components
 import DashboardNavigation from '../../containers/dashboard/DashboardContainer';
+import EmployeeNavigation from '../../containers/employee/EmployeeContainer';
 import CategoryNavigation from '../../containers/category/CategoryContainer';
 import DrawerMenu from './DrawerMenu';
 
@@ -21,7 +22,7 @@ const DrawerNavigation = DrawerNavigator(
             screen: DashboardNavigation
         },
         Employees: {
-            screen: DashboardNavigation
+            screen: EmployeeNavigation
         },
         Categories: {
             screen: CategoryNavigation

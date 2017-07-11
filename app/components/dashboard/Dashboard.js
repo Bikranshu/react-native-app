@@ -4,7 +4,7 @@ import {Container, Content, List, ListItem, Left, Right, Body, Thumbnail, Text} 
 import {withNavigation} from 'react-navigation';
 
 // Import custom components
-import HamburgerSearchHeader from '../common/HamburgerSearchHeader';
+import HamburgerHeader from '../common/HamburgerHeader';
 
 class Dashboard extends Component {
 
@@ -20,7 +20,7 @@ class Dashboard extends Component {
         return (
             <Container>
 
-                <HamburgerSearchHeader
+                <HamburgerHeader
                     title='Dashboard'
                     icon="menu"
                     onPress={() => navigate('DrawerOpen')}
