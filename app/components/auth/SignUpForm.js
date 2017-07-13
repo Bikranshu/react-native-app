@@ -49,13 +49,13 @@ class SignUpForm extends Component {
                     <View style={styles.formContainer}>
                         <Text>First Name</Text>
                         <Field
-                            name={'firstname'}
+                            name={'first_name'}
                             component={renderInput}
                         />
 
                         <Text>Last Name</Text>
                         <Field
-                            name={'lastname'}
+                            name={'last_name'}
                             component={renderInput}
                         />
 

@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {ThemeProvider, Toolbar} from 'react-native-material-ui';
-import {withNavigation} from 'react-navigation';
 
 const uiTheme = {
     palette: {
