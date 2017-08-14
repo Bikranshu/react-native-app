@@ -15,7 +15,7 @@ class DrawerContent extends Component {
                 <Content>
                     <Logo/>
                     <Separator bordered/>
-
+                    {/*<DrawerItems testID='DrawerItems' {...this.props} onItemPress={({ route }) => alert(route.key)} />*/}
                     <DrawerItems {...this.props} />
 
                 </Content>

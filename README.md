@@ -1,5 +1,5 @@
 
-## React Native App
+## React Native Boilerplate
 
 ###  [React Native](https://facebook.github.io/react-native/docs/getting-started.html) + [NativeBase](http://nativebase.io/) + [React Navigation](https://github.com/react-community/react-navigation) + [Redux](http://redux.js.org) + [Redux Form](https://github.com/erikras/redux-form) + [Firebase](https://www.npmjs.com/package/firebase) 
 
@@ -42,9 +42,10 @@ $ react-native link
     ```sh
     $ react-native start
     ```
-    Install android app in emulator / device:
+    Install android or ios app in emulator / device:
     ```sh
     $ react-native run-android
+    $ react-native run-ios
     ```
 * For Production
 
