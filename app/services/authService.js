@@ -18,11 +18,11 @@ export function login({email, password}) {
             .catch(error => {
                 dispatch(AuthAction.loginFailure(error));
                 Toast.show({
-                    supportedOrientations: ['portrait', 'landscape'],
                     text: 'Invalid username and password!',
                     position: 'bottom',
                     buttonText: 'OK',
-                    type: 'danger'
+                    type: 'danger',
+                    duration: 2000
                 })
             });
     };
@@ -53,11 +53,11 @@ export function signup({firstname, lastname, email, password}) {
             .catch(error => {
                 dispatch(AuthAction.signupFailure(error));
                 Toast.show({
-                    supportedOrientations: ['portrait', 'landscape'],
                     text: error.message,
                     position: 'bottom',
                     buttonText: 'OK',
-                    type: 'danger'
+                    type: 'danger',
+                    duration: 2000
                 })
             });
     };

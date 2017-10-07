@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Provider} from 'react-redux';
-import {StyleProvider} from 'native-base';
+import {StyleProvider, Root} from 'native-base';
 import getTheme from '../native-base-theme/components';
 
 import platform from '../native-base-theme/variables/platform';
@@ -17,9 +17,9 @@ export default class Main extends Component {
         return (
             <StyleProvider style={getTheme(material)}>
                 <Provider store={store}>
-
-                    <StackNavigationState />
-
+                    <Root>
+                        <StackNavigationState />
+                    </Root>
                 </Provider>
             </StyleProvider>
         );
